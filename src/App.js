@@ -20,7 +20,7 @@ function App() {
   };
   const setActualNameCity = async (position) => {
     const response = await axios(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=${API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=${API_KEY}`
     );
     setInput(`${response.data.name}`);
   };
@@ -38,7 +38,7 @@ function App() {
     getLocationCoords();
     const getWeather = async () => {
       const response = await axios(
-        `http://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${API_KEY}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${input}&appid=${API_KEY}`
       );
       console.log(response.data);
       setWeather(response.data);
